@@ -1,37 +1,8 @@
 // import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
 import "./App.css";
-import viteImg from "/public/vite.svg";
 import { CORE_CONCEPTS } from "./data.js";
-
-const reactDescriptions = ["Fundamental", "Crucial", "Core"];
-function getRandomInt(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
-function Header() {
-  const description = reactDescriptions[getRandomInt(2)];
-  return (
-    <header>
-      <img src={viteImg} alt="" />
-      <h1>React Essentials</h1>
-      <p>
-        {description} React concepts you will need for almost any app you are
-        going to build!
-      </p>
-    </header>
-  );
-}
-
-function CoreConcept(props) {
-  return (
-    <li>
-      <img src={props.image} alt={props.title} />
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
-    </li>
-  );
-}
+import Header from "./components/Header/Header.jsx";
+import CoreConcept from "./components/CoreConcept/CoreConcept.jsx";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -48,6 +19,10 @@ function App() {
               description={CORE_CONCEPTS[0].description}
               image={CORE_CONCEPTS[0].image}
             ></CoreConcept>
+            {/* shorter version (only can be used when keys match with dataObject) */}
+            <CoreConcept {...CORE_CONCEPTS[1]}></CoreConcept>
+            <CoreConcept {...CORE_CONCEPTS[2]}></CoreConcept>
+            <CoreConcept {...CORE_CONCEPTS[3]}></CoreConcept>
           </ul>
         </div>
       </main>

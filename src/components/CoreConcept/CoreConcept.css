@@ -1,0 +1,13 @@
+ul {
+  display: flex;
+}
+ul li {
+  list-style-type: none;
+  box-shadow: 2px 2px 5px #ccc;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 1rem;
+}
+ul li img {
+  width: 150px;
+}
